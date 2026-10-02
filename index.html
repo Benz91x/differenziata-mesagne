@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="it-IT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Differenziata Mesagne: cosa si butta oggi | Calendario raccolta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#EEF1EC; --surface:#FFFFFF; --surface-2:#F5F8F4; --sunk:#E4EAE3;
+  --ink:#111C17; --ink-2:#3B4C44; --muted:#66786E; --line:#DCE3DC;
+  --brand:#14523F; --on-brand:#EAF3EE;
+  --ring:rgba(20,82,63,.35);
+  --shadow:0 1px 2px rgba(17,28,23,.06), 0 10px 26px -16px rgba(17,28,23,.35);
+  --shadow-lift:0 2px 4px rgba(17,28,23,.06), 0 22px 44px -22px rgba(17,28,23,.45);
+
+  --bin-organico:#7C4A21; --txt-organico:#7E4B22;
+  --bin-plastica:#A97600; --txt-plastica:#8A6100;
+  --bin-vetro:#256B3D;    --txt-vetro:#1F6236;
+  --bin-carta:#1A5292;    --txt-carta:#1A5292;
+  --bin-secco:#495560;    --txt-secco:#465360;
+  --bin-nessuno:#3C4D45;  --txt-nessuno:#5D6F66;
+
+  --r-lg:26px; --r-md:18px; --r-sm:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1310; --surface:#141D19; --surface-2:#18231E; --sunk:#101815;
+    --ink:#E9F0EA; --ink-2:#B7C6BC; --muted:#879C92; --line:#25322B;
+    --brand:#123F31; --on-brand:#DCEDE3;
+    --ring:rgba(112,190,152,.4);
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 26px -16px rgba(0,0,0,.8);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 22px 44px -22px rgba(0,0,0,.9);
+    --bin-organico:#8A5527; --txt-organico:#D0975C;
+    --bin-plastica:#9A6D00; --txt-plastica:#E5B23F;
+    --bin-vetro:#206036;    --txt-vetro:#54B978;
+    --bin-carta:#1A4E8B;    --txt-carta:#6BA7EA;
+    --bin-secco:#414C56;    --txt-secco:#A0AFBB;
+    --bin-nessuno:#2A3831;  --txt-nessuno:#93A79C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1310; --surface:#141D19; --surface-2:#18231E; --sunk:#101815;
+  --ink:#E9F0EA; --ink-2:#B7C6BC; --muted:#879C92; --line:#25322B;
+  --brand:#123F31; --on-brand:#DCEDE3;
+  --ring:rgba(112,190,152,.4);
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 26px -16px rgba(0,0,0,.8);
+  --shadow-lift:0 2px 4px rgba(0,0,0,.5), 0 22px 44px -22px rgba(0,0,0,.9);
+  --bin-organico:#8A5527; --txt-organico:#D0975C;
+  --bin-plastica:#9A6D00; --txt-plastica:#E5B23F;
+  --bin-vetro:#206036;    --txt-vetro:#54B978;
+  --bin-carta:#1A4E8B;    --txt-carta:#6BA7EA;
+  --bin-secco:#414C56;    --txt-secco:#A0AFBB;
+  --bin-nessuno:#2A3831;  --txt-nessuno:#93A79C;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15px; line-height:1.5;
+  -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;background:none;border:0;margin:0;padding:0;cursor:pointer;text-align:left}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--ring);outline-offset:3px;border-radius:6px}
+
+.wrap{width:100%;max-width:560px;margin-inline:auto;padding-inline:16px}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--brand);color:var(--on-brand);padding-block:calc(12px + env(safe-area-inset-top)) 12px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.crest{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:9px;overflow:hidden;background:rgba(255,255,255,.1)}
+.crest img{display:block;width:100%;height:100%;object-fit:contain}
+.brandtext{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.bt1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:118%;font-size:17px;letter-spacing:.1em;text-transform:uppercase}
+.bt2{font-family:"Public Sans",system-ui,sans-serif;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(234,243,238,.66);font-weight:500;margin-top:2px}
+.iconbtn{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.12);transition:background .15s}
+.iconbtn:hover{background:rgba(255,255,255,.22)}
+.iconbtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px}
+
+/* ---------- today ---------- */
+.today{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);
+  background:var(--bin);color:#fff;padding:20px 20px 18px;
+  box-shadow:var(--shadow-lift);width:100%;display:block;
+  animation:rise .5s cubic-bezier(.2,.7,.3,1) both;
+}
+.today::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 15% 0%,rgba(255,255,255,.19),transparent 62%);pointer-events:none}
+.today-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+.eyebrow{font-family:"Archivo",sans-serif;font-weight:700;font-stretch:112%;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.today .t-title{font-weight:800;font-stretch:104%;font-size:clamp(2rem,8.4vw,2.85rem);line-height:.96;letter-spacing:-.015em;text-transform:uppercase;margin-top:8px}
+.today-date{margin-top:9px;font-size:14.5px;color:rgba(255,255,255,.82);font-weight:500}
+.chip{display:inline-flex;align-items:center;gap:6px;margin-top:13px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.17);font-size:12.5px;font-weight:600;letter-spacing:.01em}
+.today-bin{width:74px;height:74px;flex:none}
+.today-cta{position:relative;z-index:2;margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.15);font-weight:600;font-size:14px;transition:background .15s}
+.today-cta:hover{background:rgba(255,255,255,.25)}
+.today-cta svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.today.is-none{background:var(--bin-nessuno)}
+.today.is-none .t-title{font-size:clamp(1.7rem,6.6vw,2.2rem)}
+
+/* ---------- ieri / domani ---------- */
+.adjacent{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adj{
+  background:var(--surface);border-radius:var(--r-md);padding:13px 13px 14px;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px;
+  border:1px solid var(--line);transition:transform .12s,box-shadow .12s;
+}
+.adj:hover{transform:translateY(-1px);box-shadow:var(--shadow-lift)}
+.adj-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.adj-label{font-family:"Archivo",sans-serif;font-weight:700;font-stretch:112%;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.adj-bin{width:26px;height:26px;flex:none;color:var(--txt)}
+.adj-name{font-family:"Archivo",sans-serif;font-weight:750;font-stretch:100%;font-size:16.5px;line-height:1.08;color:var(--txt);letter-spacing:-.005em}
+.adj-date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* ---------- panels ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px;box-shadow:var(--shadow)}
+.panel h2{font-weight:800;font-stretch:110%;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.panel-head span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.note{font-size:13.5px;color:var(--ink-2);margin:0 0 13px}
+
+/* week list */
+.week{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.week li + li{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;width:100%;padding:10px 8px;margin-inline:-8px;border-radius:10px;transition:background .12s}
+.row:hover{background:var(--surface-2)}
+.daynum{width:38px;height:38px;flex:none;border-radius:11px;background:var(--sunk);display:grid;place-items:center;line-height:1;text-align:center}
+.daynum b{font-family:"Archivo",sans-serif;font-weight:750;font-size:15.5px;font-variant-numeric:tabular-nums;display:block}
+.daynum i{font-style:normal;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-top:1px}
+.row-main{min-width:0;display:block}
+.row-name{display:block;font-weight:600;font-size:15px;color:var(--txt);line-height:1.2}
+.row-sub{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.row .adj-bin{width:22px;height:22px}
+.row.is-today .daynum{background:var(--bin);color:#fff}
+.row.is-today .daynum i{color:rgba(255,255,255,.72)}
+.row.is-today .row-name{font-weight:700}
+.row.is-past{opacity:.5}
+
+/* thursday list */
+.thu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.thu li{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}
+.thu .adj-bin{width:22px;height:22px}
+.thu-date{font-weight:600;font-size:13.5px;font-variant-numeric:tabular-nums;min-width:0;flex:1;white-space:nowrap}
+.thu-tag{font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--txt);text-align:right;white-space:nowrap}
+.thu li.is-next{border-color:var(--txt);background:var(--surface)}
+
+/* info */
+.info-line{display:flex;align-items:center;gap:12px;padding:11px 0;text-decoration:none}
+.info-line + .info-line{border-top:1px solid var(--line)}
+.info-ic{width:34px;height:34px;flex:none;border-radius:10px;background:var(--sunk);display:grid;place-items:center}
+.info-ic svg{width:17px;height:17px;fill:none;stroke:var(--ink-2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.info-line>span:last-child{min-width:0;display:block}
+.info-t{display:block;font-weight:650;font-size:15px;line-height:1.2;font-variant-numeric:tabular-nums}
+.info-s{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.callout{background:var(--surface-2);border:1px dashed var(--line)}
+.callout p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.callout h2{margin-bottom:8px}
+
+/* accordion: guida completa + domande frequenti */
+.lead{font-size:14px;color:var(--ink-2);margin:0 0 4px;line-height:1.55}
+.acc{border-top:1px solid var(--line)}
+.acc summary{display:flex;align-items:center;gap:11px;padding:13px 0;cursor:pointer;list-style:none}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"";margin-left:auto;flex:none;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-2px) rotate(45deg);transition:transform .18s}
+.acc[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.acc summary:hover .acc-t{text-decoration:underline;text-underline-offset:3px}
+.acc .adj-bin{width:23px;height:23px}
+.acc-txt{min-width:0}
+.acc-t{display:block;font-family:"Archivo",sans-serif;font-weight:750;font-stretch:100%;font-size:15.5px;line-height:1.2;color:var(--txt);letter-spacing:-.005em;margin:0}
+.acc-w{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.acc .items{padding-bottom:6px}
+.acc-body{padding-bottom:14px}
+.acc-body p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.55}
+.faq .acc-t{font-family:"Public Sans",system-ui,sans-serif;font-weight:650;font-size:14.5px;color:var(--ink)}
+
+.tip{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border-radius:var(--r-md);background:var(--surface-2);border:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.tip svg{width:18px;height:18px;flex:none;margin-top:1px;fill:none;stroke:var(--muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tip button{margin-left:auto;flex:none;color:var(--muted);font-size:12px;font-weight:600;text-decoration:underline}
+
+.foot{font-size:11.5px;color:var(--muted);text-align:center;margin:4px 0 0;line-height:1.55}
+
+/* ---------- sheet ---------- */
+.backdrop{position:fixed;inset:0;background:rgba(9,18,14,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.backdrop.open{opacity:1;pointer-events:auto}
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  margin-inline:auto;max-width:560px;
+  background:var(--surface);border-radius:24px 24px 0 0;
+  box-shadow:0 -12px 44px rgba(0,0,0,.3);
+  transform:translateY(101%);transition:transform .3s cubic-bezier(.2,.75,.3,1);
+  max-height:88vh;display:flex;flex-direction:column;overscroll-behavior:contain;
+}
+.sheet.open{transform:translateY(0)}
+.sheet-head{background:var(--bin);color:#fff;border-radius:24px 24px 0 0;padding:10px 20px 18px;flex:none;touch-action:none}
+.handle{width:40px;height:4px;border-radius:2px;background:rgba(255,255,255,.42);margin:0 auto 14px}
+.sheet-head-row{display:flex;align-items:center;gap:14px}
+.sheet-head .today-bin{width:46px;height:46px}
+.sheet-head h3{font-weight:800;font-stretch:104%;font-size:23px;line-height:1;text-transform:uppercase;letter-spacing:-.01em}
+.sheet-head p{margin:6px 0 0;font-size:13px;color:rgba(255,255,255,.8)}
+.sheet-close{margin-left:auto;flex:none;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.sheet-close svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round}
+.sheet-body{padding:18px 20px calc(24px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch}
+.sheet-body h4{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:110%;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:0 0 11px}
+.items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.items li{position:relative;padding:9px 0 9px 19px;font-size:14.5px;line-height:1.4}
+.items li + li{border-top:1px solid var(--line)}
+.items li::before{content:"";position:absolute;left:0;top:1.05em;width:7px;height:7px;border-radius:50%;background:var(--txt)}
+.next-pick{margin-top:18px;padding:13px 14px;border-radius:13px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;gap:11px}
+.next-pick svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--txt);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.next-pick span{font-size:13.5px;color:var(--ink-2)}
+.next-pick b{color:var(--ink)}
+.sheet-note{margin:14px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5}
+
+/* frazione color bindings */
+.f-organico{--bin:var(--bin-organico);--txt:var(--txt-organico)}
+.f-plastica{--bin:var(--bin-plastica);--txt:var(--txt-plastica)}
+.f-vetro{--bin:var(--bin-vetro);--txt:var(--txt-vetro)}
+.f-carta{--bin:var(--bin-carta);--txt:var(--txt-carta)}
+.f-secco{--bin:var(--bin-secco);--txt:var(--txt-secco)}
+.f-nessuno{--bin:var(--bin-nessuno);--txt:var(--txt-nessuno)}
+
+/* bin drawing */
+.bin{display:block}
+.bin .b-body{fill:currentColor}
+.bin .b-glyph{fill:var(--surface)}
+.today-bin .b-body,.sheet-head .b-body{fill:#fff}
+.today-bin .b-glyph,.sheet-head .b-glyph{fill:var(--bin)}
+.today.is-none .today-bin .b-glyph{fill:var(--bin-nessuno)}
+
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+@media (max-width:340px){
+  .adjacent{grid-template-columns:1fr}
+}
+</style>
+<meta name="description" content="Cosa si butta oggi a Mesagne: calendario aggiornato della raccolta differenziata porta a porta. Organico, plastica, vetro e metalli, carta, secco residuo, giorno per giorno.">
+<link rel="canonical" href="https://benz91x.github.io/differenziata-mesagne/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#14523F" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1310" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Differenziata">
+<meta name="format-detection" content="telephone=yes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Differenziata Mesagne">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://benz91x.github.io/differenziata-mesagne/">
+<meta property="og:title" content="Differenziata Mesagne — cosa si butta oggi">
+<meta property="og:description" content="Il calendario della raccolta porta a porta a Mesagne, sempre aggiornato: oggi, ieri e domani.">
+<meta property="og:image" content="https://benz91x.github.io/differenziata-mesagne/icons/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Differenziata Mesagne — cosa si butta oggi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Differenziata Mesagne — cosa si butta oggi">
+<meta name="twitter:description" content="Il calendario della raccolta porta a porta a Mesagne, sempre aggiornato.">
+<meta name="twitter:image" content="https://benz91x.github.io/differenziata-mesagne/icons/og-image.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://benz91x.github.io/differenziata-mesagne/#website",
+      "url": "https://benz91x.github.io/differenziata-mesagne/",
+      "name": "Differenziata Mesagne",
+      "inLanguage": "it-IT",
+      "description": "Cosa si butta oggi a Mesagne: calendario aggiornato della raccolta differenziata porta a porta. Organico, plastica, vetro e metalli, carta, secco residuo, giorno per giorno."
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://benz91x.github.io/differenziata-mesagne/#app",
+      "url": "https://benz91x.github.io/differenziata-mesagne/",
+      "name": "Differenziata Mesagne",
+      "description": "Calendario della raccolta differenziata porta a porta a Mesagne: mostra cosa si conferisce oggi, cosa si conferiva ieri e cosa si conferirà domani, con l'elenco dei materiali per ogni frazione.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "iOS, Android, Web",
+      "browserRequirements": "Richiede JavaScript",
+      "inLanguage": "it-IT",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Mesagne",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mesagne",
+          "addressRegion": "BR",
+          "addressCountry": "IT"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://benz91x.github.io/differenziata-mesagne/#faq",
+      "inLanguage": "it-IT",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cosa si butta oggi a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La frazione del giorno è indicata in cima a questa pagina e si aggiorna da sola ogni giorno. In generale: organico il lunedì, il mercoledì e il venerdì; plastica il martedì; vetro e metalli oppure carta e cartone il giovedì, a settimane alterne; secco residuo il sabato. La domenica non si espone nulla."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si buttano vetro e metalli a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vetro e metalli si conferiscono il 2° e il 4° giovedì del mese. Negli altri giovedì — il 1°, il 3° e, quando c'è, il 5° — esce invece carta e cartone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si butta la carta a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Carta e cartone si conferiscono il 1°, il 3° e il 5° giovedì del mese. Nel 2° e nel 4° giovedì escono vetro e metalli."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si butta la plastica a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La plastica si conferisce ogni martedì."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si butta l'organico a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'organico si conferisce il lunedì, il mercoledì e il venerdì."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando si butta il secco residuo a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il secco residuo, cioè l'indifferenziato, si conferisce ogni sabato."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come si prenota il ritiro di pannolini e pannoloni?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il ritiro aggiuntivo di pannolini e pannoloni viene effettuato il lunedì e il mercoledì, previa prenotazione presso l'Ufficio Ambiente del Comune di Mesagne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Chi gestisce la raccolta differenziata a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il servizio è gestito da Gial Ambiente. Per informazioni e segnalazioni: numero verde 800 959305 da rete fissa, 388 1866116 da rete mobile, oppure la pagina Facebook Mesagne Ambiente."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap bar">
+    <div class="brand">
+      <div class="crest" id="crest" hidden></div>
+      <h1 class="brandtext">
+        <span class="bt1">Mesagne</span>
+        <span class="bt2">Raccolta differenziata</span>
+      </h1>
+    </div>
+    <button class="iconbtn" id="shareBtn" hidden aria-label="Condividi l'app">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+    </button>
+  </div>
+</div>
+
+<main class="wrap">
+  <button class="today" id="today" aria-label="Dettagli del ritiro di oggi"></button>
+
+  <div class="adjacent">
+    <button class="adj" id="yday"></button>
+    <button class="adj" id="tmrw"></button>
+  </div>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Questa settimana</h2><span id="weekRange"></span></div>
+    <ul class="week" id="week"></ul>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>I prossimi giovedì</h2></div>
+    <p class="note">Il giovedì la frazione cambia: <b>vetro e metalli</b> il 2° e 4° giovedì del mese, <b>carta e cartone</b> il 1°, 3° e 5°.</p>
+    <ul class="thu" id="thu"></ul>
+  </section>
+
+  <section class="panel callout">
+    <h2>Pannolini e pannoloni</h2>
+    <p>Il ritiro aggiuntivo viene effettuato <b>lunedì e mercoledì</b>, previa prenotazione presso l'Ufficio Ambiente del Comune.</p>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>Info e segnalazioni</h2></div>
+    <a class="info-line" href="tel:800959305">
+      <span class="info-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 4-2 1.4a13 13 0 0 0 6 6l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg></span>
+      <span><span class="info-t">800 959 305</span><span class="info-s">Numero verde — da rete fissa</span></span>
+    </a>
+    <a class="info-line" href="tel:3881866116">
+      <span class="info-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.7 18.6h2.6"/></svg></span>
+      <span><span class="info-t">388 186 6116</span><span class="info-s">Da rete mobile</span></span>
+    </a>
+    <div class="info-line">
+      <span class="info-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 0-9.3 7.9v-5.6H8.7V12h2v-1.7c0-2 1.2-3.1 3-3.1.9 0 1.8.15 1.8.15v1.9h-1c-1 0-1.3.62-1.3 1.26V12h2.2l-.35 2.3h-1.85v5.6A8 8 0 0 0 20 12Z"/></svg></span>
+      <span><span class="info-t">Mesagne Ambiente</span><span class="info-s">Pagina Facebook del servizio</span></span>
+    </div>
+  </section>
+
+  <section class="panel" id="guida">
+    <div class="panel-head"><h2>Guida completa alla differenziata a Mesagne</h2></div>
+    <p class="lead">Il calendario della raccolta porta a porta a Mesagne: <b>organico</b> il lunedì, il mercoledì e il venerdì, <b>plastica</b> il martedì, <b>vetro e metalli</b> il 2° e il 4° giovedì del mese, <b>carta e cartone</b> il 1°, il 3° e il 5° giovedì, <b>secco residuo</b> il sabato. La domenica non è previsto alcun ritiro. Tocca una frazione per vedere cosa ci si conferisce.</p>
+
+    <details class="acc frz f-organico" data-k="organico">
+      <summary><span class="adj-bin" data-bin="organico"></span><span class="acc-txt"><h3 class="acc-t">Organico</h3><span class="acc-w">Lunedì, mercoledì e venerdì</span></span></summary>
+      <ul class="items">
+        <li>Avanzi di cibo non liquidi</li>
+        <li>Scarti di frutta e verdura</li>
+        <li>Fondi di caffè</li>
+        <li>Tovaglioli e fazzoletti di carta</li>
+        <li>Filtri da tè</li>
+        <li>Gusci di frutta secca e uova</li>
+        <li>Lettiera naturale per animali</li>
+        <li>Cenere</li>
+      </ul>
+    </details>
+
+    <details class="acc frz f-plastica" data-k="plastica">
+      <summary><span class="adj-bin" data-bin="plastica"></span><span class="acc-txt"><h3 class="acc-t">Plastica</h3><span class="acc-w">Ogni martedì</span></span></summary>
+      <ul class="items">
+        <li>Contenitori in plastica per prodotti per l'igiene personale o la pulizia della casa</li>
+        <li>Piatti e bicchieri in plastica</li>
+        <li>Reti per frutta e verdura</li>
+        <li>Sacchetti in plastica</li>
+      </ul>
+    </details>
+
+    <details class="acc frz f-vetro" data-k="vetro">
+      <summary><span class="adj-bin" data-bin="vetro"></span><span class="acc-txt"><h3 class="acc-t">Vetro e metalli</h3><span class="acc-w">2° e 4° giovedì del mese</span></span></summary>
+      <ul class="items">
+        <li>Bottiglie in vetro</li>
+        <li>Barattoli, vasi e vasetti in vetro</li>
+        <li>Vaschette per alimenti</li>
+        <li>Fogli di alluminio</li>
+        <li>Contenitori in alluminio e scatolette</li>
+      </ul>
+    </details>
+
+    <details class="acc frz f-carta" data-k="carta">
+      <summary><span class="adj-bin" data-bin="carta"></span><span class="acc-txt"><h3 class="acc-t">Carta e cartone</h3><span class="acc-w">1°, 3° e 5° giovedì del mese</span></span></summary>
+      <ul class="items">
+        <li>Giornali</li>
+        <li>Tetrapak</li>
+        <li>Libri, quaderni, fotocopie e fogli vari</li>
+        <li>Imballaggi in carta e cartone</li>
+        <li>Cartone per pizza pulito</li>
+      </ul>
+    </details>
+
+    <details class="acc frz f-secco" data-k="secco">
+      <summary><span class="adj-bin" data-bin="secco"></span><span class="acc-txt"><h3 class="acc-t">Secco residuo</h3><span class="acc-w">Ogni sabato</span></span></summary>
+      <ul class="items">
+        <li>Penne</li>
+        <li>Pannolini e assorbenti</li>
+        <li>Gomme da masticare</li>
+        <li>Cicche di sigarette</li>
+        <li>Giocattoli</li>
+        <li>Carta oleata</li>
+        <li>CD</li>
+        <li>Piatti e tazze in ceramica</li>
+        <li>Rasoi e spazzolini</li>
+        <li>Posate in plastica</li>
+        <li>Siringhe (con ago provvisto di cappuccio)</li>
+      </ul>
+    </details>
+  </section>
+
+  <section class="panel" id="domande">
+    <div class="panel-head"><h2>Domande frequenti</h2></div>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Cosa si butta oggi a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>La frazione del giorno è indicata in cima a questa pagina e si aggiorna da sola ogni giorno. In generale: organico il lunedì, il mercoledì e il venerdì; plastica il martedì; vetro e metalli oppure carta e cartone il giovedì, a settimane alterne; secco residuo il sabato. La domenica non si espone nulla.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quando si buttano vetro e metalli a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Vetro e metalli si conferiscono il <b>2° e il 4° giovedì del mese</b>. Negli altri giovedì — il 1°, il 3° e, quando c'è, il 5° — esce invece carta e cartone.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quando si butta la carta a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Carta e cartone si conferiscono il <b>1°, il 3° e il 5° giovedì del mese</b>. Nel 2° e nel 4° giovedì escono vetro e metalli.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quando si butta la plastica a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>La plastica si conferisce <b>ogni martedì</b>.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quando si butta l'organico a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>L'organico si conferisce <b>il lunedì, il mercoledì e il venerdì</b>.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quando si butta il secco residuo a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Il secco residuo, cioè l'indifferenziato, si conferisce <b>ogni sabato</b>.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Come si prenota il ritiro di pannolini e pannoloni?</h3></span></summary>
+      <div class="acc-body"><p>Il ritiro aggiuntivo di pannolini e pannoloni viene effettuato <b>il lunedì e il mercoledì</b>, previa prenotazione presso l'<b>Ufficio Ambiente del Comune</b> di Mesagne.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Chi gestisce la raccolta differenziata a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Il servizio è gestito da <b>Gial Ambiente</b>. Per informazioni e segnalazioni: numero verde <b>800 959305</b> da rete fissa, <b>388 1866116</b> da rete mobile, oppure la pagina Facebook <b>Mesagne Ambiente</b>.</p></div>
+    </details>
+  </section>
+
+  <div class="tip" id="tip" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3"/><path d="M12 6.5v6m0 0 2.2-2.2M12 12.5l-2.2-2.2"/></svg>
+    <span id="tipText"></span>
+    <button id="tipClose">Ok</button>
+  </div>
+
+  <p class="foot">Calendario riportato dal volantino del servizio di raccolta differenziata porta a porta.<br>Servizio informativo non ufficiale — per variazioni fa fede la comunicazione del Comune.</p>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-head" id="sheetHead">
+    <div class="handle"></div>
+    <div class="sheet-head-row">
+      <span class="today-bin" id="sheetBin"></span>
+      <div>
+        <h3 id="sheetTitle" class="display"></h3>
+        <p id="sheetWhen"></p>
+      </div>
+      <button class="sheet-close" id="sheetClose" aria-label="Chiudi">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =========================================================
+     SLOT LOGO — incolla qui il logo ufficiale come data URI
+     (es. "data:image/png;base64,iVBORw0KGgo...") oppure, nella
+     versione ospitata su Netlify, "assets/logo.png".
+     Lasciando la stringa vuota resta il solo lettering.
+     ========================================================= */
+  var LOGO_SRC = "assets/logo.png";
+
+  var GIORNI = ["Domenica","Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato"];
+  var GIORNI_BREVI = ["Dom","Lun","Mar","Mer","Gio","Ven","Sab"];
+  var MESI = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+  var ORD = ["","1°","2°","3°","4°","5°"];
+
+  var GLYPHS = {
+    organico: '<path class="b-glyph" d="M32 30.5c-4.6 0-8 3.2-8 7.4 0 4.6 3.6 8.6 8 11.6 4.4-3 8-7 8-11.6 0-4.2-3.4-7.4-8-7.4Zm.9-6.6c1.9.4 3.2 1.9 3.4 3.8-1.9-.3-3.3-1.8-3.4-3.8Z"/>',
+    plastica: '<path class="b-glyph" d="M29.6 28.6h4.8v2.1c0 1 .4 1.7 1.1 2.4 1.3 1.2 2 2.6 2 4.3v10.3c0 1.4-1.1 2.5-2.5 2.5h-6c-1.4 0-2.5-1.1-2.5-2.5V37.4c0-1.7.7-3.1 2-4.3.7-.7 1.1-1.4 1.1-2.4v-2.1Zm.6-3.1h3.6v2.2h-3.6v-2.2Z"/>',
+    vetro:    '<path class="b-glyph" d="M25.4 32.4h6.2c.9 0 1.6.7 1.6 1.6v14.2c0 .9-.7 1.6-1.6 1.6h-6.2c-.9 0-1.6-.7-1.6-1.6V34c0-.9.7-1.6 1.6-1.6Zm-.4-3.4h7v2.2h-7V29Zm14 .3h2.9v3c0 .9.3 1.4.9 2 .9.9 1.4 1.9 1.4 3.1v10.6c0 .9-.7 1.7-1.7 1.7h-4.1c-.9 0-1.7-.8-1.7-1.7V37.4c0-1.2.5-2.2 1.4-3.1.6-.6.9-1.1.9-2v-3Z"/>',
+    carta:    '<path class="b-glyph" d="M24.6 28.8h11.6c.8 0 1.5.7 1.5 1.5v17.1c0 .8-.7 1.5-1.5 1.5H24.6c-.8 0-1.5-.7-1.5-1.5V30.3c0-.8.7-1.5 1.5-1.5Zm2.2 4.1v2.1h7.2v-2.1h-7.2Zm0 4.6v2.1h7.2v-2.1h-7.2Zm0 4.6v2.1h4.9v-2.1h-4.9Zm13-8.4h1.3c1.6 0 2.9 1.3 2.9 2.9v10.9c0 1.7-1.3 3-2.9 3h-1.3V33.7Z"/>',
+    secco:    '<path class="b-glyph" d="M28.4 26.4h7.2l-1.4 4.2h2.9c1.4 0 2.5 1.4 2.2 2.8l-2.6 13.4c-.3 1.3-1.4 2.2-2.7 2.2h-4c-1.3 0-2.4-.9-2.7-2.2l-2.6-13.4c-.3-1.4.8-2.8 2.2-2.8h2.9l-1.4-4.2Z"/>',
+    nessuno:  '<path class="b-glyph" d="M32 29.4c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10Zm0 3.6c1.4 0 2.7.4 3.7 1.2L27.8 42a6.4 6.4 0 0 1 4.2-9Zm0 12.8c-1.4 0-2.7-.4-3.7-1.2l7.9-7.8a6.4 6.4 0 0 1-4.2 9Z"/>'
+  };
+
+  var FRAZIONI = {
+    organico: {
+      nome:"Organico", occhiello:"Umido — scarti di cucina",
+      nota:"Ritiro il lunedì, il mercoledì e il venerdì."
+    },
+    plastica: {
+      nome:"Plastica", occhiello:"Imballaggi in plastica",
+      nota:"Ritiro il martedì."
+    },
+    vetro: {
+      nome:"Vetro e metalli", occhiello:"2° e 4° giovedì del mese",
+      nota:"Il giovedì si alterna con carta e cartone: vetro e metalli escono il 2° e il 4° giovedì del mese."
+    },
+    carta: {
+      nome:"Carta e cartone", occhiello:"1°, 3° e 5° giovedì del mese",
+      nota:"Il giovedì si alterna con vetro e metalli: carta e cartone escono il 1°, il 3° e il 5° giovedì del mese."
+    },
+    secco: {
+      nome:"Secco residuo", occhiello:"Indifferenziato",
+      nota:"Ritiro il sabato."
+    },
+    nessuno: {
+      nome:"Nessun ritiro", occhiello:"Giornata senza raccolta",
+      nota:"La domenica non è previsto alcun ritiro."
+    }
+  };
+
+  /* Gli elenchi dei materiali vivono nell'HTML statico della "Guida completa",
+     così sono leggibili da Google e dai lettori di schermo anche senza
+     JavaScript. Qui li rileggiamo dal DOM: un'unica fonte, nessun doppione. */
+  Object.keys(FRAZIONI).forEach(function(k){
+    var host = document.querySelector('.frz[data-k="'+k+'"] .items');
+    FRAZIONI[k].items = host
+      ? Array.prototype.map.call(host.querySelectorAll("li"), function(li){ return li.textContent.trim(); })
+      : [];
+  });
+
+  /* ---------- calendario ---------- */
+  function frazioneDi(d){
+    var dow = d.getDay();
+    if(dow===1||dow===3||dow===5) return "organico";
+    if(dow===2) return "plastica";
+    if(dow===6) return "secco";
+    if(dow===4){
+      var n = Math.floor((d.getDate()-1)/7)+1;
+      return (n===2||n===4) ? "vetro" : "carta";
+    }
+    return "nessuno";
+  }
+  function nGiovedi(d){ return Math.floor((d.getDate()-1)/7)+1; }
+  function addDays(d,n){ var x=new Date(d.getFullYear(),d.getMonth(),d.getDate()); x.setDate(x.getDate()+n); return x; }
+  function sameDay(a,b){ return a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate(); }
+  function dataLunga(d){ return GIORNI[d.getDay()]+" "+d.getDate()+" "+MESI[d.getMonth()]; }
+  function dataBreve(d){ return GIORNI_BREVI[d.getDay()]+" "+d.getDate()+" "+MESI[d.getMonth()].slice(0,3); }
+  function prossimoRitiro(key, from){
+    for(var i=1;i<=45;i++){ var d=addDays(from,i); if(frazioneDi(d)===key) return d; }
+    return null;
+  }
+  function binSVG(key, cls){
+    return '<svg class="bin '+(cls||"")+'" viewBox="0 0 64 64" aria-hidden="true" width="100%" height="100%">'+
+      '<path d="M20.5 14.5q11.5-7.5 23 0" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" class="b-body-stroke"/>'+
+      '<rect class="b-body" x="11" y="15" width="42" height="9.5" rx="4.75"/>'+
+      '<path class="b-body" d="M15.5 27h33l-3.6 28.1A4.4 4.4 0 0 1 40.5 59h-17a4.4 4.4 0 0 1-4.4-3.9L15.5 27Z"/>'+
+      (GLYPHS[key]||"")+
+    '</svg>';
+  }
+
+  /* ---------- render ---------- */
+  var oggi = new Date();
+  var els = {
+    today:document.getElementById("today"), yday:document.getElementById("yday"), tmrw:document.getElementById("tmrw"),
+    week:document.getElementById("week"), weekRange:document.getElementById("weekRange"), thu:document.getElementById("thu"),
+    sheet:document.getElementById("sheet"), backdrop:document.getElementById("backdrop"), sheetHead:document.getElementById("sheetHead"),
+    sheetBin:document.getElementById("sheetBin"), sheetTitle:document.getElementById("sheetTitle"),
+    sheetWhen:document.getElementById("sheetWhen"), sheetBody:document.getElementById("sheetBody"), sheetClose:document.getElementById("sheetClose")
+  };
+
+  if(LOGO_SRC){
+    var crest = document.getElementById("crest");
+    var img = new Image();
+    img.alt = "Stemma del Comune di Mesagne";
+    img.onload = function(){ crest.appendChild(img); crest.hidden = false; };
+    img.src = LOGO_SRC;
+  }
+
+  function renderToday(){
+    var key = frazioneDi(oggi), f = FRAZIONI[key];
+    var extra = "";
+    if(key==="vetro"||key==="carta") extra = ORD[nGiovedi(oggi)]+" giovedì del mese";
+    else if(key==="nessuno"){
+      var dom = FRAZIONI[frazioneDi(addDays(oggi,1))];
+      extra = "Domani tocca a " + dom.nome.toLowerCase();
+    } else extra = f.occhiello;
+
+    els.today.className = "today f-"+key+(key==="nessuno"?" is-none":"");
+    els.today.innerHTML =
+      '<div class="today-grid">'+
+        '<div>'+
+          '<div class="eyebrow">Oggi · '+GIORNI[oggi.getDay()]+'</div>'+
+          '<h2 class="t-title display">'+f.nome+'</h2>'+
+          '<div class="today-date">'+oggi.getDate()+' '+MESI[oggi.getMonth()]+' '+oggi.getFullYear()+'</div>'+
+          '<div class="chip">'+extra+'</div>'+
+        '</div>'+
+        '<span class="today-bin">'+binSVG(key)+'</span>'+
+      '</div>'+
+      '<div class="today-cta"><span>'+(key==="nessuno"?"Vedi il calendario della settimana":"Cosa si conferisce")+'</span>'+
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m0 0-5-5m5 5-5 5"/></svg></div>';
+    els.today.onclick = function(){ openSheet(key, oggi); };
+  }
+
+  function renderAdj(el, d, label){
+    var key = frazioneDi(d), f = FRAZIONI[key];
+    el.className = "adj f-"+key;
+    el.innerHTML =
+      '<div class="adj-top"><span class="adj-label">'+label+'</span><span class="adj-bin">'+binSVG(key)+'</span></div>'+
+      '<div><div class="adj-name">'+f.nome+'</div><div class="adj-date">'+dataBreve(d)+'</div></div>';
+    el.onclick = function(){ openSheet(key, d); };
+  }
+
+  function renderWeek(){
+    var lun = addDays(oggi, -((oggi.getDay()+6)%7));
+    els.weekRange.textContent = lun.getDate()+"–"+addDays(lun,6).getDate()+" "+MESI[addDays(lun,6).getMonth()];
+    var html = "";
+    for(var i=0;i<7;i++){
+      var d = addDays(lun,i), key = frazioneDi(d), f = FRAZIONI[key];
+      var isToday = sameDay(d,oggi);
+      var sub = (key==="vetro"||key==="carta") ? ORD[nGiovedi(d)]+" giovedì del mese" : (key==="nessuno" ? "Nessuna raccolta" : f.occhiello);
+      html += '<li><button class="row f-'+key+(isToday?" is-today":"")+(d<oggi&&!isToday?" is-past":"")+'" data-k="'+key+'" data-t="'+d.getTime()+'">'+
+        '<span class="daynum"><b>'+d.getDate()+'</b><i>'+GIORNI_BREVI[d.getDay()]+'</i></span>'+
+        '<span class="row-main"><span class="row-name">'+f.nome+'</span><span class="row-sub">'+sub+'</span></span>'+
+        '<span class="adj-bin">'+binSVG(key)+'</span></button></li>';
+    }
+    els.week.innerHTML = html;
+  }
+
+  function renderThu(){
+    var html = "", found = 0, d = new Date(oggi.getFullYear(),oggi.getMonth(),oggi.getDate());
+    for(var i=0;i<70 && found<4;i++){
+      var x = addDays(d,i);
+      if(x.getDay()!==4) continue;
+      var key = frazioneDi(x), f = FRAZIONI[key];
+      html += '<li class="f-'+key+(found===0?" is-next":"")+'">'+
+        '<span class="adj-bin">'+binSVG(key)+'</span>'+
+        '<span class="thu-date">'+x.getDate()+' '+MESI[x.getMonth()]+' <span style="color:var(--muted);font-weight:500">· '+ORD[nGiovedi(x)]+'</span></span>'+
+        '<span class="thu-tag">'+f.nome+'</span></li>';
+      found++;
+    }
+    els.thu.innerHTML = html;
+  }
+
+  /* ---------- sheet ---------- */
+  var lastFocus = null;
+  function openSheet(key, d){
+    var f = FRAZIONI[key];
+    lastFocus = document.activeElement;
+    els.sheet.className = "sheet f-"+key;
+    els.sheetBin.innerHTML = binSVG(key);
+    els.sheetTitle.textContent = f.nome;
+    els.sheetWhen.textContent = d ? dataLunga(d) : f.occhiello;
+
+    var body = "";
+    if(f.items.length){
+      body += '<h4>Cosa si conferisce</h4><ul class="items">';
+      for(var i=0;i<f.items.length;i++) body += '<li>'+f.items[i]+'</li>';
+      body += '</ul>';
+      var next = prossimoRitiro(key, oggi);
+      if(next) body += '<div class="next-pick"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4m8-4v4M3.5 10h17"/></svg>'+
+        '<span>Prossimo ritiro: <b>'+dataLunga(next)+'</b></span></div>';
+    }
+    body += '<p class="sheet-note">'+f.nota+'</p>';
+    els.sheetBody.innerHTML = body;
+    els.sheetBody.scrollTop = 0;
+
+    els.backdrop.classList.add("open");
+    els.sheet.classList.add("open");
+    document.body.style.overflow = "hidden";
+    setTimeout(function(){ els.sheetClose.focus(); }, 60);
+  }
+  function closeSheet(){
+    els.backdrop.classList.remove("open");
+    els.sheet.classList.remove("open");
+    els.sheet.style.transform = "";
+    document.body.style.overflow = "";
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  els.backdrop.addEventListener("click", closeSheet);
+  els.sheetClose.addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && els.sheet.classList.contains("open")) closeSheet(); });
+  els.week.addEventListener("click", function(e){
+    var b = e.target.closest("button.row"); if(!b) return;
+    openSheet(b.getAttribute("data-k"), new Date(Number(b.getAttribute("data-t"))));
+  });
+
+  /* swipe-to-close */
+  var sy=null, dy=0;
+  els.sheetHead.addEventListener("touchstart", function(e){ sy=e.touches[0].clientY; dy=0; els.sheet.style.transition="none"; }, {passive:true});
+  els.sheetHead.addEventListener("touchmove", function(e){
+    if(sy===null) return;
+    dy = Math.max(0, e.touches[0].clientY - sy);
+    els.sheet.style.transform = "translateY("+dy+"px)";
+  }, {passive:true});
+  els.sheetHead.addEventListener("touchend", function(){
+    els.sheet.style.transition = "";
+    if(dy > 90) closeSheet(); else els.sheet.style.transform = "";
+    sy=null; dy=0;
+  });
+
+  /* ---------- top-level only extras ---------- */
+  var standalone = false;
+  try { standalone = (window.self === window.top); } catch(err){ standalone = false; }
+
+  if(standalone){
+    var sb = document.getElementById("shareBtn");
+    sb.hidden = false;
+    sb.addEventListener("click", function(){
+      var data = {title:"Differenziata Mesagne", text:"Cosa si porta fuori oggi a Mesagne", url:location.href};
+      if(navigator.share){ navigator.share(data).catch(function(){}); }
+      else if(navigator.clipboard){ navigator.clipboard.writeText(location.href).then(function(){ sb.setAttribute("aria-label","Link copiato"); }); }
+    });
+
+    var seen = false;
+    try { seen = localStorage.getItem("mesagne-tip") === "1"; } catch(err){}
+    var installed = window.matchMedia && window.matchMedia("(display-mode: standalone)").matches;
+    if(!seen && !installed && !window.navigator.standalone){
+      var ios = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      document.getElementById("tipText").innerHTML = ios
+        ? "Tieni l'app a portata di mano: tocca <b>Condividi</b> in Safari, poi <b>Aggiungi alla schermata Home</b>."
+        : "Tieni l'app a portata di mano: menu del browser <b>⋮</b>, poi <b>Aggiungi a schermata Home</b>.";
+      document.getElementById("tip").hidden = false;
+    }
+    document.getElementById("tipClose").addEventListener("click", function(){
+      document.getElementById("tip").hidden = true;
+      try { localStorage.setItem("mesagne-tip","1"); } catch(err){}
+    });
+  }
+
+  /* ---------- go ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-bin]"), function(el){
+    el.innerHTML = binSVG(el.getAttribute("data-bin"));
+  });
+
+  function draw(){
+    oggi = new Date();
+    renderToday();
+    renderAdj(els.yday, addDays(oggi,-1), "Ieri");
+    renderAdj(els.tmrw, addDays(oggi,1), "Domani");
+    renderWeek();
+    renderThu();
+  }
+  draw();
+
+  /* ridisegna al cambio di giorno o al ritorno sull'app */
+  var giornoCorrente = oggi.toDateString();
+  function checkDay(){
+    var now = new Date();
+    if(now.toDateString() !== giornoCorrente){ giornoCorrente = now.toDateString(); draw(); }
+  }
+  setInterval(checkDay, 60000);
+  document.addEventListener("visibilitychange", function(){ if(!document.hidden) checkDay(); });
+})();
+</script>
+
+<script>
+if ("serviceWorker" in navigator && location.protocol === "https:") {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
