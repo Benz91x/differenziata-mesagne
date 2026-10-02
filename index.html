@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Differenziata Mesagne: cosa si butta oggi | Calendario raccolta</title>
+<title>Raccolta differenziata Mesagne: calendario e cosa si butta oggi</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600;700&display=swap">
 <style>
 :root{
@@ -161,6 +161,14 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
 .callout{background:var(--surface-2);border:1px dashed var(--line)}
 .callout p{margin:0;font-size:13.5px;color:var(--ink-2)}
 .callout h2{margin-bottom:8px}
+.callout a{text-underline-offset:2px;white-space:nowrap}
+
+/* orari dell'ecocentro */
+.hours{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.hours th{text-align:left;font-weight:600;padding:8px 0}
+.hours td{text-align:right;color:var(--ink-2);padding:8px 0 8px 12px;white-space:nowrap}
+.hours tr + tr > *{border-top:1px solid var(--line)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* accordion: guida completa + domande frequenti */
 .lead{font-size:14px;color:var(--ink-2);margin:0 0 4px;line-height:1.55}
@@ -184,6 +192,7 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
 .tip button{margin-left:auto;flex:none;color:var(--muted);font-size:12px;font-weight:600;text-decoration:underline}
 
 .foot{font-size:11.5px;color:var(--muted);text-align:center;margin:4px 0 0;line-height:1.55}
+.foot a{text-underline-offset:2px}
 
 /* ---------- sheet ---------- */
 .backdrop{position:fixed;inset:0;background:rgba(9,18,14,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
@@ -241,7 +250,7 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
   .adjacent{grid-template-columns:1fr}
 }
 </style>
-<meta name="description" content="Cosa si butta oggi a Mesagne: calendario aggiornato della raccolta differenziata porta a porta. Organico, plastica, vetro e metalli, carta, secco residuo, giorno per giorno.">
+<meta name="description" content="Calendario della raccolta differenziata a Mesagne: cosa si butta oggi, domani e tutta la settimana. Orari dell'ecocentro e ritiro ingombranti.">
 <link rel="canonical" href="https://benz91x.github.io/differenziata-mesagne/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -257,14 +266,14 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
 <meta property="og:site_name" content="Differenziata Mesagne">
 <meta property="og:locale" content="it_IT">
 <meta property="og:url" content="https://benz91x.github.io/differenziata-mesagne/">
-<meta property="og:title" content="Differenziata Mesagne — cosa si butta oggi">
-<meta property="og:description" content="Il calendario della raccolta porta a porta a Mesagne, sempre aggiornato: oggi, ieri e domani.">
+<meta property="og:title" content="Raccolta differenziata Mesagne — cosa si butta oggi">
+<meta property="og:description" content="Il calendario della raccolta porta a porta a Mesagne, sempre aggiornato: oggi, ieri e domani. Con orari dell'ecocentro e ritiro ingombranti.">
 <meta property="og:image" content="https://benz91x.github.io/differenziata-mesagne/icons/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Differenziata Mesagne — cosa si butta oggi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Differenziata Mesagne — cosa si butta oggi">
+<meta name="twitter:title" content="Raccolta differenziata Mesagne — cosa si butta oggi">
 <meta name="twitter:description" content="Il calendario della raccolta porta a porta a Mesagne, sempre aggiornato.">
 <meta name="twitter:image" content="https://benz91x.github.io/differenziata-mesagne/icons/og-image.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -281,8 +290,28 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
       "@id": "https://benz91x.github.io/differenziata-mesagne/#website",
       "url": "https://benz91x.github.io/differenziata-mesagne/",
       "name": "Differenziata Mesagne",
+      "alternateName": ["Raccolta differenziata Mesagne", "Calendario raccolta differenziata Mesagne"],
       "inLanguage": "it-IT",
-      "description": "Cosa si butta oggi a Mesagne: calendario aggiornato della raccolta differenziata porta a porta. Organico, plastica, vetro e metalli, carta, secco residuo, giorno per giorno."
+      "description": "Cosa si butta oggi a Mesagne: calendario aggiornato della raccolta differenziata porta a porta. Organico, plastica, vetro e metalli, carta, secco residuo, giorno per giorno.",
+      "publisher": { "@id": "https://benz91x.github.io/#person" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://benz91x.github.io/differenziata-mesagne/#webpage",
+      "url": "https://benz91x.github.io/differenziata-mesagne/",
+      "name": "Raccolta differenziata Mesagne: calendario e cosa si butta oggi",
+      "isPartOf": { "@id": "https://benz91x.github.io/differenziata-mesagne/#website" },
+      "mainEntity": { "@id": "https://benz91x.github.io/differenziata-mesagne/#app" },
+      "primaryImageOfPage": "https://benz91x.github.io/differenziata-mesagne/icons/og-image.png",
+      "inLanguage": "it-IT",
+      "dateModified": "2026-10-02",
+      "author": { "@id": "https://benz91x.github.io/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://benz91x.github.io/#person",
+      "name": "Alessandro Chiri",
+      "url": "https://benz91x.github.io/"
     },
     {
       "@type": "WebApplication",
@@ -295,6 +324,8 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
       "browserRequirements": "Richiede JavaScript",
       "inLanguage": "it-IT",
       "isAccessibleForFree": true,
+      "author": { "@id": "https://benz91x.github.io/#person" },
+      "dateModified": "2026-10-02",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -374,6 +405,30 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
         },
         {
           "@type": "Question",
+          "name": "Quali sono gli orari dell'ecocentro di Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il Centro comunale di raccolta (ecocentro) è in via Marangio, nella zona industriale. È aperto il lunedì, il mercoledì, il giovedì e il venerdì dalle 8 alle 12 e dalle 14 alle 18; il martedì e il sabato dalle 8 alle 13 e dalle 14 alle 18; la domenica dalle 9 alle 12 e dalle 14 alle 17."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come si prenota il ritiro degli ingombranti a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il ritiro degli ingombranti si prenota chiamando il numero verde 800 959305 da rete fissa oppure il 388 1866116 da rete mobile, raggiungibile anche su WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A che ora passa la raccolta dei rifiuti a Mesagne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Secondo il Comune di Mesagne, il servizio di raccolta è effettuato in un arco di tempo che va dalle 6 alle 18."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Chi gestisce la raccolta differenziata a Mesagne?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -440,6 +495,26 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
       <span class="info-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 0-9.3 7.9v-5.6H8.7V12h2v-1.7c0-2 1.2-3.1 3-3.1.9 0 1.8.15 1.8.15v1.9h-1c-1 0-1.3.62-1.3 1.26V12h2.2l-.35 2.3h-1.85v5.6A8 8 0 0 0 20 12Z"/></svg></span>
       <span><span class="info-t">Mesagne Ambiente</span><span class="info-s">Pagina Facebook del servizio</span></span>
     </div>
+  </section>
+
+  <section class="panel" id="ecocentro">
+    <div class="panel-head"><h2>Ecocentro di Mesagne: orari</h2></div>
+    <p class="note">Il Centro comunale di raccolta (CCR) è in <b>via Marangio, nella zona industriale</b>.</p>
+    <table class="hours">
+      <caption class="sr-only">Orari di apertura dell'ecocentro di Mesagne</caption>
+      <tr><th scope="row">Lunedì</th><td>8:00–12:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Martedì</th><td>8:00–13:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Mercoledì</th><td>8:00–12:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Giovedì</th><td>8:00–12:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Venerdì</th><td>8:00–12:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Sabato</th><td>8:00–13:00</td><td>14:00–18:00</td></tr>
+      <tr><th scope="row">Domenica</th><td>9:00–12:00</td><td>14:00–17:00</td></tr>
+    </table>
+  </section>
+
+  <section class="panel callout" id="ingombranti">
+    <h2>Ritiro ingombranti</h2>
+    <p>Si prenota chiamando il numero verde <a href="tel:800959305"><b>800 959 305</b></a> da rete fissa oppure il <a href="tel:3881866116"><b>388 186 6116</b></a> da rete mobile, raggiungibile anche su WhatsApp.</p>
   </section>
 
   <section class="panel" id="guida">
@@ -549,6 +624,21 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
     </details>
 
     <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Quali sono gli orari dell'ecocentro di Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Il Centro comunale di raccolta (ecocentro) è in <b>via Marangio, nella zona industriale</b>. È aperto il lunedì, il mercoledì, il giovedì e il venerdì <b>dalle 8 alle 12 e dalle 14 alle 18</b>; il martedì e il sabato <b>dalle 8 alle 13 e dalle 14 alle 18</b>; la domenica <b>dalle 9 alle 12 e dalle 14 alle 17</b>.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">Come si prenota il ritiro degli ingombranti a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Il ritiro degli ingombranti si prenota chiamando il numero verde <b>800 959305</b> da rete fissa oppure il <b>388 1866116</b> da rete mobile, raggiungibile anche su WhatsApp.</p></div>
+    </details>
+
+    <details class="acc faq">
+      <summary><span class="acc-txt"><h3 class="acc-t">A che ora passa la raccolta dei rifiuti a Mesagne?</h3></span></summary>
+      <div class="acc-body"><p>Secondo il Comune di Mesagne, il servizio di raccolta è effettuato in un arco di tempo che va <b>dalle 6 alle 18</b>.</p></div>
+    </details>
+
+    <details class="acc faq">
       <summary><span class="acc-txt"><h3 class="acc-t">Chi gestisce la raccolta differenziata a Mesagne?</h3></span></summary>
       <div class="acc-body"><p>Il servizio è gestito da <b>Gial Ambiente</b>. Per informazioni e segnalazioni: numero verde <b>800 959305</b> da rete fissa, <b>388 1866116</b> da rete mobile, oppure la pagina Facebook <b>Mesagne Ambiente</b>.</p></div>
     </details>
@@ -560,7 +650,7 @@ main{padding-block:18px calc(34px + env(safe-area-inset-bottom));display:flex;fl
     <button id="tipClose">Ok</button>
   </div>
 
-  <p class="foot">Calendario riportato dal volantino del servizio di raccolta differenziata porta a porta.<br>Servizio informativo non ufficiale — per variazioni fa fede la comunicazione del Comune.</p>
+  <p class="foot">Calendario riportato dal volantino del servizio di raccolta differenziata porta a porta.<br>Fonti: <a href="https://www.comune.mesagne.br.it/novita/servizio-di-igiene-urbana-del-comune-di-mesagne-calendari-di-raccolta-e-contatti-utili/" rel="noopener">Comune di Mesagne</a> e <a href="https://gialambiente.it/wp-content/uploads/2025/10/calendario-UTENZE-DOMESTICHE-mesagne.pdf" rel="noopener">calendario Gial Ambiente</a>, ottobre 2025.<br>Servizio informativo non ufficiale — per variazioni fa fede la comunicazione del Comune.<br>Realizzata da <a href="https://benz91x.github.io/">Alessandro Chiri</a>.</p>
 </main>
 
 <div class="backdrop" id="backdrop"></div>

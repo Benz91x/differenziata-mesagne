@@ -1,7 +1,7 @@
 /* Differenziata Mesagne — cache dell'app per l'uso offline.
    La versione cambia a ogni pubblicazione: così ogni nuovo caricamento
    sostituisce davvero la copia salvata sui telefoni di chi usa l'app. */
-var CACHE = "mesagne-differenziata-20261002-ghpages";
+var CACHE = "mesagne-differenziata-20261002-seo";
 var SHELL = ["./", "./index.html", "./manifest.webmanifest",
              "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
